@@ -2,7 +2,10 @@
 require("dotenv").config();
 
 const express=require(`express`);
+const cors= require('cors');
 const app=express();
+//permitir todas las solicitudes*/
+app.use(cors());
 app.use(express.json());
 const routes=require(`./api.routes`);
 app.use(`/api/v1`, routes);
